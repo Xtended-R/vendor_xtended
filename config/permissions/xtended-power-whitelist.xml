@@ -14,9 +14,7 @@
      limitations under the License.
 -->
 
-<config>
-    <allow-in-power-save package="com.android.deskclock" />
-    <allow-in-power-save package="com.android.messaging" />
-    <allow-in-power-save package="com.google.android.deskclock" />
-    <allow-in-power-save package="com.google.android.gms"/>
-</config>
+<resources>
+    <dimen name="search_bar_corner_radius">24.0dip</dimen>
+    <dimen name="suggestion_card_corner_radius">8.0dip</dimen>
+</resources>
