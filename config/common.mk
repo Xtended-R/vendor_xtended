@@ -88,11 +88,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xtended/config/permissions/xtended-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/xtended-sysconfig.xml
 
-# Device Personalization Services Permission
-PRODUCT_COPY_FILES += \
-    vendor/xtended/config/permissions/com.google.android.as.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.google.android.as.xml \
-    vendor/xtended/config/permissions/com.google.android.as.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.as.xml
-
 # Copy all Xtended-specific init rc files
 $(foreach f,$(wildcard vendor/xtended/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
@@ -129,7 +124,7 @@ include vendor/xtended/config/aosp_audio.mk
 include vendor/xtended/config/xtended_audio.mk
 
 # Include Vendor Xtras
-include vendor/xtras/xtras.mk
+#include vendor/xtras/xtras.mk
 
 # Bootanimation
 include vendor/xtended/config/bootanimation.mk
@@ -152,22 +147,12 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Xtended packages
 PRODUCT_PACKAGES += \
-    ThemePicker \
     Calculator \
-    BluetoothExt \
-    ExactCalculator \
-    OmniJaws \
-    OmniStyle \
-    StitchImage
-
-# Cutout control overlays
-PRODUCT_PACKAGES += \
-    HideCutout \
-    StatusBarStock
+    BluetoothExt
 
 # CustomDoze
-PRODUCT_PACKAGES += \
-    CustomDoze
+#PRODUCT_PACKAGES += \
+#    CustomDoze
 
 # Extra tools in Xtended
 PRODUCT_PACKAGES += \
@@ -253,7 +238,6 @@ DEVICE_PACKAGE_OVERLAYS += vendor/xtended/overlay/common
 
 -include vendor/xtended/config/version.mk
 -include vendor/xtended/config/partner_gms.mk
--include packages/apps/Plugins/plugins.mk
 
 # Allow overlays to be excluded from enforcing RRO
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/xtended/overlay
@@ -262,6 +246,3 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/xtended/overlay
 ifeq ($(WITH_GAPPS),true)
 include vendor/gapps/config.mk
 endif
-
-# Enable ccache
-USE_CCACHE := true
