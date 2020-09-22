@@ -124,7 +124,7 @@ include vendor/xtended/config/aosp_audio.mk
 include vendor/xtended/config/xtended_audio.mk
 
 # Include Vendor Xtras
-#include vendor/xtras/xtras.mk
+include vendor/xtras/xtras.mk
 
 # Bootanimation
 include vendor/xtended/config/bootanimation.mk
