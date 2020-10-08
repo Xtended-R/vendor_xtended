@@ -1,6 +1,8 @@
 # Versioning System
 XTENDED_MAJOR_VERSION = XR
-XTENDED_RELEASE_VERSION = Alpha-1
+
+XTENDED_RELEASE_VERSION = v1.0
+
 XTENDED_BUILD_DATE := $(shell date +"%Y%m%d")
 
 ifndef XTENDED_BUILD_TYPE
