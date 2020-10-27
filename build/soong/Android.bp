@@ -89,7 +89,7 @@ soong_config_module_type {
     module_type: "cc_defaults",
     config_namespace: "xtendedGlobalVars",
     value_variables: ["target_camera_needs_client_info"],
-    properties: ["cflags"],
+    properties: ["cppflags"],
 }
 
 target_camera_needs_client_info {
